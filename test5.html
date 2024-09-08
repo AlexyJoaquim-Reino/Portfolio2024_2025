@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Immersif</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0e0b16;
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #4a148c, #ff6e40);
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: white;
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      mix-blend-mode: screen;
+      z-index: 1;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(14, 11, 22, 0.8);
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #ff6e40;
+      text-transform: uppercase;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Animations flottantes sur les projets */
+    .project-card {
+      background: #1a1b41;
+      padding: 30px;
+      margin: 40px 0;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      transition: transform 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-15px);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .project-card h3 {
+      margin-top: 20px;
+      font-size: 1.8rem;
+      color: #ff6e40;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      color: #bbb;
+    }
+
+    /* Section Projets */
+    .projects-section {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #4a148c, #0e0b16);
+      text-align: center;
+    }
+
+    .projects-section h2 {
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      color: #ff6e40;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    /* Section contact */
+    .contact-section {
+      background-color: #0e0b16;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      color: #ff6e40;
+    }
+
+    .contact-info {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-info a {
+      color: #ff6e40;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: #fff;
+    }
+
+    footer {
+      background-color: #1a1b41;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      color: #bbb;
+    }
+
+    /* Effets de survol sur les images de projet */
+    .project-card img {
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Transitions douces sur les sections */
+    .section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    .section.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#projects">Projets</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Mon Portfolio</h1>
+  </header>
+
+  <section id="projects" class="projects-section">
+    <h2>Mes Projets</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x400" alt="Projet 1">
+        <h3>Projet 1</h3>
+        <p>Un projet créatif et innovant, intégrant des animations et des interactions dynamiques.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x400" alt="Projet 2">
+        <h3>Projet 2</h3>
+        <p>Une application web moderne avec une attention particulière au design et à l'expérience utilisateur.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/600x400" alt="Projet 3">
+        <h3>Projet 3</h3>
+        <p>Un site interactif avec des effets visuels impressionnants et un design responsive.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contactez-moi</h2>
+    <p class="contact-info">
+      Email : <a href="mailto:contact@portfolio.com">contact@portfolio.com</a><br>
+      Téléphone : +33 6 12 34 56 78
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Mon Portfolio - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    // Script pour animation d'apparition des sections au scroll
+    const sections = document.querySelectorAll('.section');
+
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY + window.innerHeight;
+
+      sections.forEach(section => {
+        if (scrollPosition >= section.offsetTop + 100) {
+          section.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
